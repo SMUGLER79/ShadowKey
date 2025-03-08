@@ -10,6 +10,7 @@ screenshot.png
 e_key_log.log
 e_systemInfo.log
 e_clipboardInfo.log
+encryptionKey.txt
 
 # C extensions
 *.so

