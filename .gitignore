@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 key_log.log
+systemInfo.log
+clipboardInfo.log
+micData.wav
+screenshot.png
+e_key_log.log
+e_systemInfo.log
+e_clipboardInfo.log
 
 # C extensions
 *.so
