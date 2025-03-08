@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 
-key = ""
+key = "5-p4dvXvRCeAIFmWhvXFrmelmxPHFnEwvCFZ204AofE="
 
 keyInfoFile_e = "e_key_log.log"
 systemInfoFile_e = "e_systemInfo.log"
